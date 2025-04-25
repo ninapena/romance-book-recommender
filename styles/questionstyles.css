@@ -56,3 +56,32 @@ p {
 #gonext:hover {
     border: solid black 2px;
 }
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #C8ADEA;
+    z-index: 1000; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: "Outfit";
+    transition: text-shadow 0.3s ease; 
+}
+
+nav li a:hover {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

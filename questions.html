@@ -11,13 +11,22 @@
 </head>    
 
 <body>
+
+ <nav>
+    <ul>
+       <li><a href="index.html">HOME</a></li>
+       <li><a href="questions.html">QUESTIONS</a></li>
+      <li><a href="recommendation.html">RECOMMENDATION</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+    </ul>
+</nav>
+
 <h1>Answer a few questions about what book you want to read!</h1>
 <ol>
     <li>
         <p>What kind of main character do you want to read about?</p>
         <label><input type="radio" name="q1" value="Female"> Female</label><br>
         <label><input type="radio" name="q1" value="Male"> Male</label><br>
-        <label><input type="radio" name="q1" value="Non-binary"> Non-binary</label><br>
         <label><input type="radio" name="q1" value="Dual POV"> Dual POV</label>
     </li>
     <li>
@@ -37,18 +46,21 @@
         <label><input type="radio" name="q3" value="Small town romance"> Small town romance</label>
     </li>
     <li>
-        <p>Would you like an open or closed door romance?</p>
+        <p>Would you like an open or closed door romance?*</p>
         <label><input type="radio" name="q4" value="Open"> Open</label><br>
         <label><input type="radio" name="q4" value="Closed"> Closed</label><br>
         <label><input type="radio" name="q4" value="No preference"> No preference</label>
     </li>
     <li>
-        <p>Do you want a happy or sad ending?</p>
-        <label><input type="radio" name="q5" value="Happy"> Happy</label><br>
-        <label><input type="radio" name="q5" value="Sad"> Sad</label><br>
+        <p>Do you want it to be part of a series?</p>
+        <label><input type="radio" name="q5" value="Yes"> Yes</label><br>
+        <label><input type="radio" name="q5" value="No"> No</label><br>
+        <label><input type="radio" name="q5" value="No preference"> No preference</label><br>
     </li>
 </ol>
 
 </body>
 
 <button id="gonext"><a href="recommendation.html"></a>Next</a></button>
+
+<p>*An open door romance refers to a romance novel with spice/explicit sex scenes.</p>
