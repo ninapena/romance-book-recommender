@@ -55,3 +55,48 @@ nav {
 nav li a:hover {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+button {
+    display: block;
+    margin: auto;        
+    font-size: 2em;
+    text-transform: uppercase;
+    background-color: #C8ADEA;
+    border: none;
+    padding: 10px;
+    font-family: "Outfit";
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    border: solid black 2px;
+}
+
+button a {
+    color: black;
+    text-decoration: none;
+}
+
+button a:hover {
+    color: black;
+}
+
+/* links to sources */
+.sources {
+    text-align: center;
+}
+  
+.sources a {
+    display: inline-block;
+    margin: 10px;
+    font-size: 1.2em;
+    font-family: "Outfit";
+    color: black;
+}
+  
+.sources a:hover {
+    text-decoration: underline;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}

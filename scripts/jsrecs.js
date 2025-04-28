@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             image.style.maxWidth = "200px";
         
             const description = document.createElement("p");
-            description.innerHTML = `<strong>Description:</strong> ${book.description}`;
+            description.innerHTML = `${book.description}`;
         
             const genre = document.createElement("p");
             genre.innerHTML = `<strong>Genre:</strong> ${book.genre}`;
@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
             link.target = "_blank";
             link.textContent = "Buy on Amazon";
         
-            // Append all elements to the bookDiv
             bookDiv.appendChild(title);
             bookDiv.appendChild(author);
             bookDiv.appendChild(image);
@@ -75,13 +74,10 @@ document.addEventListener('DOMContentLoaded', function () {
             bookDiv.appendChild(series);
             bookDiv.appendChild(link);
         
-            // Append bookDiv to the container
             container.appendChild(bookDiv);
         });        
 
     }
-
-    // Optional: clear the stored data after showing
-    localStorage.removeItem("matchedBooks");
-    localStorage.removeItem("noMatch");
+    // localStorage.removeItem("matchedBooks");
+    //localStorage.removeItem("noMatch");
 });
