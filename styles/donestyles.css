@@ -91,7 +91,7 @@ img {
     border: solid black 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 30rem) {
     nav ul {
         flex-direction: column;
         align-items: center;
