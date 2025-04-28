@@ -22,45 +22,51 @@
 </nav>
 
 <h1>Answer a few questions about what book you want to read!</h1>
+<form id="questionForm">
 <ol>
     <li>
-        <p>What kind of main character do you want to read about?</p>
-        <label><input type="radio" name="q1" value="Female"> Female</label><br>
-        <label><input type="radio" name="q1" value="Male"> Male</label><br>
-        <label><input type="radio" name="q1" value="Dual POV"> Dual POV</label>
+        <p>What kind of genre do you want?</p>
+        <label><input type="radio" name="questionThree" value="Fantasy Romance"> Fantasy romance</label><br>
+        <label><input type="radio" name="questionThree" value="Cowboy Romance"> Cowboy romance</label><br>
+        <label><input type="radio" name="questionThree" value="Sports Romance"> Sports romance</label><br>
+        <label><input type="radio" name="questionThree" value="Small Town Romance"> Small town romance</label>
+        <label><input type="radio" name="questionThree" value="Romantic Comedy"> Romantic comedy</label>
+        <label><input type="radio" name="questionThree" value="Young Adult Romance"> Young adult romance</label>
+        <label><input type="radio" name="questionThree" value="Dark Romance"> Dark romance</label>
     </li>
     <li>
         <p>What trope do you want?</p>
-        <label><input type="radio" name="q2" value="Friends to lovers"> Friends to lovers</label><br>
-        <label><input type="radio" name="q2" value="Enemies to lovers"> Enemies to lovers</label><br>
-        <label><input type="radio" name="q2" value="Workplace"> Workplace</label><br>
-        <label><input type="radio" name="q2" value="Forced proximity"> Forced proximity</label><br>
-        <label><input type="radio" name="q2" value="Fake dating"> Fake dating</label><br>
-        <label><input type="radio" name="q2" value="Slow burn"> Slow burn</label>
-    </li>
-    <li>
-        <p>What kind of plot do you want?</p>
-        <label><input type="radio" name="q3" value="Fantasy romance"> Fantasy romance</label><br>
-        <label><input type="radio" name="q3" value="Cowboy romance"> Cowboy romance</label><br>
-        <label><input type="radio" name="q3" value="Sports romance"> Sports romance</label><br>
-        <label><input type="radio" name="q3" value="Small town romance"> Small town romance</label>
-    </li>
-    <li>
-        <p>Would you like an open or closed door romance?*</p>
-        <label><input type="radio" name="q4" value="Open"> Open</label><br>
-        <label><input type="radio" name="q4" value="Closed"> Closed</label><br>
-        <label><input type="radio" name="q4" value="No preference"> No preference</label>
+        <label><input type="radio" name="questionTwo" value="Friends to Lovers"> Friends to lovers</label><br>
+        <label><input type="radio" name="questionTwo" value="Enemies to Lovers"> Enemies to lovers</label><br>
+        <label><input type="radio" name="questionTwo" value="Workplace"> Workplace</label><br>
+        <label><input type="radio" name="questionTwo" value="Forced Proximity"> Forced proximity</label><br>
+        <label><input type="radio" name="questionTwo" value="Fake Dating"> Fake dating</label><br>
+        <label><input type="radio" name="questionTwo" value="Slow Burn"> Slow burn</label>
+        <label><input type="radio" name="questionTwo" value="Love Triangle"> Love triangle</label>
+        <label><input type="radio" name="questionTwo" value="Grumpy/Sunshine"> Grumpy/sunshine</label>
+        <label><input type="radio" name="questionTwo" value="Second Chance Romance"> Second chance</label>
     </li>
     <li>
         <p>Do you want it to be part of a series?</p>
-        <label><input type="radio" name="q5" value="Yes"> Yes</label><br>
-        <label><input type="radio" name="q5" value="No"> No</label><br>
-        <label><input type="radio" name="q5" value="No preference"> No preference</label><br>
+        <label><input type="radio" name="questionFive" value="Yes"> Yes</label><br>
+        <label><input type="radio" name="questionFive" value="No"> No</label><br>
+        <!-- <label><input type="radio" name="questionFive" value="No preference"> No preference</label><br> -->
+    </li>
+    <li>
+        <p>Would you like an open or closed door romance?*</p>
+        <label><input type="radio" name="questionFour" value="Open Door"> Open</label><br>
+        <label><input type="radio" name="questionFour" value="Closed Door"> Closed</label><br>
+        <!-- <label><input type="radio" name="questionFour" value="No preference"> No preference</label> -->
+    </li>
+    <p>*An open door romance refers to a romance novel with spice/explicit sex scenes.</p>
+    <li>
+        <p>What kind of main character do you want to read about?</p>
+        <label><input type="radio" name="questionOne" value="FMC"> Female</label><br>
+        <label><input type="radio" name="questionOne" value="MMC"> Male</label><br>
+        <label><input type="radio" name="questionOne" value="Dual"> Dual POV</label>
     </li>
 </ol>
+<button type="submit" id="gonext">Get my book match!</button>
+</form>
 
 </body>
-
-<button id="gonext"><a href="recommendation.html"></a>Next</a></button>
-
-<p>*An open door romance refers to a romance novel with spice/explicit sex scenes.</p>

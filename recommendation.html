@@ -20,6 +20,48 @@
   </nav>
 
 <h1>Based on your preferences, I recommend:</h1>
+<div id="recommendationContainer"></div>
+<script>
+    // Check if a book was found or not
+    const noMatch = JSON.parse(localStorage.getItem('noMatch'));
+    const recommendationContainer = document.getElementById('recommendationContainer');
+
+    if (noMatch) {
+        // Display the "No Match" message if no book was found
+        recommendationContainer.innerHTML = `
+            <p>Sorry, we couldn't find a book that matches your preferences. Please try again with different choices.</p>
+        `;
+    } else {
+        // Retrieve the recommended book from localStorage
+        const recommendedBook = JSON.parse(localStorage.getItem('recommendedBook'));
+
+        if (recommendedBook) {
+            // Display the book recommendation if a match was found
+            recommendationContainer.innerHTML = `
+                <h2>Your Recommended Book:</h2>
+                <h3>${recommendedBook.title}</h3>
+                <p>Author: ${recommendedBook.author}</p>
+                <img src="${recommendedBook.image}" alt="${recommendedBook.title}" />
+                <p>${recommendedBook.description}</p>
+                <p><strong>Genre:</strong> ${recommendedBook.genre}</p>
+                <p><strong>Trope(s):</strong> ${recommendedBook.trope.join(', ')}</p>
+                <p><strong>Spice Level:</strong> ${recommendedBook['spice-level']}</p>
+                <p><strong>POV:</strong> ${recommendedBook.POV}</p>
+                <p><strong>Series:</strong> ${recommendedBook.series ? "Yes" : "No"}</p>
+            `;
+        } else {
+            recommendationContainer.innerHTML = `
+                <p>No recommendation available. Please try again later.</p>
+            `;
+        }
+    }
+
+    // Clear localStorage after displaying the recommendation
+    localStorage.removeItem('recommendedBook');
+    localStorage.removeItem('noMatch');
+</script>
+
+</body>
 
 <button id="restart"><a href="questions.html">Restart</a></button>
 <button id="done"><a href="done.html">Done</a></button>
