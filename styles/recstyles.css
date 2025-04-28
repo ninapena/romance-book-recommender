@@ -51,3 +51,140 @@ nav {
 nav li a:hover {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+#recommendationContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+p strong {
+    font-weight: bold;
+    font-family: "Outfit";
+}
+
+p {
+    font-weight: normal;
+    font-family: "Outfit";
+}
+
+.book-match {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+
+    padding: 20px;
+    margin: 15px 0;
+    background: #F5C9DB;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+/* bottom border */
+.book-match:not(:last-child) {
+    border-bottom: 2px solid #000000; 
+}
+
+/* title */
+.book-match h2 {
+    font-size: 2em;
+    font-family: "Pridi";
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* author */
+.book-match p strong {
+    font-weight: bold;
+    font-family: "Outfit";
+}
+
+.book-match p {
+    font-size: 1em;
+    font-family: "Outfit";
+    margin-bottom: 8px;
+}
+
+/* cover */
+.book-match img {
+    max-width: 200px;
+    height: auto;
+    /* margin-bottom: 15px; */
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid white;
+    border-radius: 5px;
+}
+
+/* description */
+.book-match p:nth-child(4) {
+    font-style: italic;
+    font-family: "Outfit";
+}
+
+/* details */
+.book-match p:nth-child(5), 
+.book-match p:nth-child(6),
+.book-match p:nth-child(7), 
+.book-match p:nth-child(8), 
+.book-match p:nth-child(9) {
+    margin-top: 5px;
+    font-size: 1.5em;
+    font-family: "Outfit";
+}
+
+/* Amazon link */
+.book-match a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #B7E2ED;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    font-family: "Outfit";
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-match a:hover {
+    background-color: #C8E9C7;
+    text-decoration: underline;
+}
+
+/* no match */
+#recommendationContainer p {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: "Outfit";
+    text-align: center;
+    margin-top: 20px;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#restart, #done {
+    font-size: 2em;
+    text-transform: uppercase;
+    background-color: #C8ADEA;
+    border: none;
+    padding: 10px;
+    font-family: "Outfit";
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart:hover, #done:hover {
+    border: solid black 2px;
+}

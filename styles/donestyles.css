@@ -33,3 +33,31 @@ nav {
 nav li a:hover {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+body {
+    text-align: center; 
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 30%;
+    height: 15%
+}
+
+#restart {
+    display: block;
+    margin: auto;
+    font-size: 2em;
+    text-transform: uppercase;
+    background-color: #C8ADEA;
+    border: none;
+    padding: 10px;
+    font-family: "Outfit";
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart:hover {
+    border: solid black 2px;
+}

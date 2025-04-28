@@ -11,33 +11,77 @@ doneBtn.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('recommendationContainer');
     const noMatch = localStorage.getItem('noMatch') === "true";
-    const bookData = localStorage.getItem('recommendedBook');
+    const booksData = localStorage.getItem('matchedBooks');
 
     if (noMatch) {
-        // If no match was found, display this message
-        container.innerHTML = `
-            <p>Sorry, we couldn't find a book that matches your preferences. Try again with different answers!</p>
-        `;
-    } else if (bookData) {
-        // If a match is found, parse and display the book details
-        const book = JSON.parse(bookData);
-        container.innerHTML = `
-            <h2>Your Book Match: ${book.title}</h2>
-            <p><strong>Author:</strong> ${book.author}</p>
-            <img src="${book.image}" alt="${book.title}" style="max-width: 200px;" />
-            <p><strong>Description:</strong> ${book.description}</p>
-            <p><strong>Genre:</strong> ${book.genre}</p>
-            <p><strong>Trope(s):</strong> ${book.trope.join(', ')}</p>
-            <p><strong>Spice Level:</strong> ${book["spice-level"]}</p>
-            <p><strong>POV:</strong> ${book.POV}</p>
-            <p><strong>Part of a Series?</strong> ${book.series ? "Yes" : "No"}</p>
-        `;
-    } /* else {
-        // If something goes wrong and no data is available, show this fallback message
-        container.innerHTML = `<p>Oops, something went wrong. Please try again.</p>`;
-    } */
+        const message = document.createElement("p");
+        message.textContent = "Sorry, we couldn't find a book that matches your preferences. Try again with different answers!";
+        container.appendChild(message);
+    } else if (booksData) {
+        const books = JSON.parse(booksData);
+        
+        books.forEach((book) => {
+            const bookDiv = document.createElement("div");
+            bookDiv.classList.add("book-match");
+        
+            const title = document.createElement("h2");
+            title.textContent = book.title;
+            bookDiv.appendChild(title);
+        
+            const author = document.createElement("p");
+            const authorStrong = document.createElement("strong");
+            authorStrong.textContent = "Author: ";
+            author.appendChild(authorStrong);
+            author.appendChild(document.createTextNode(book.author));
+            bookDiv.appendChild(author);
+        
+            const image = document.createElement("img");
+            image.src = book.image;
+            image.alt = book.title;
+            image.style.maxWidth = "200px";
+        
+            const description = document.createElement("p");
+            description.innerHTML = `<strong>Description:</strong> ${book.description}`;
+        
+            const genre = document.createElement("p");
+            genre.innerHTML = `<strong>Genre:</strong> ${book.genre}`;
+        
+            const tropes = document.createElement("p");
+            tropes.innerHTML = `<strong>Trope(s):</strong> ${book.trope.join(', ')}`;
+        
+            const spice = document.createElement("p");
+            spice.innerHTML = `<strong>Spice Level:</strong> ${book["spice-level"]}`;
+        
+            const pov = document.createElement("p");
+            pov.innerHTML = `<strong>POV:</strong> ${book.POV}`;
+        
+            const series = document.createElement("p");
+            series.innerHTML = `<strong>Part of a Series?</strong> ${book.series ? "Yes" : "No"}`;
+        
+            const link = document.createElement("a");
+            link.href = book.link;
+            link.target = "_blank";
+            link.textContent = "Buy on Amazon";
+        
+            // Append all elements to the bookDiv
+            bookDiv.appendChild(title);
+            bookDiv.appendChild(author);
+            bookDiv.appendChild(image);
+            bookDiv.appendChild(description);
+            bookDiv.appendChild(genre);
+            bookDiv.appendChild(tropes);
+            bookDiv.appendChild(spice);
+            bookDiv.appendChild(pov);
+            bookDiv.appendChild(series);
+            bookDiv.appendChild(link);
+        
+            // Append bookDiv to the container
+            container.appendChild(bookDiv);
+        });        
 
-    // Optional: clear the stored data after showing the recommendation
-    localStorage.removeItem("recommendedBook");
+    }
+
+    // Optional: clear the stored data after showing
+    localStorage.removeItem("matchedBooks");
     localStorage.removeItem("noMatch");
 });
