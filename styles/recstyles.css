@@ -212,3 +212,23 @@ p {
 #restart a:hover, #done a:hover {
     color: black;
 }
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+  
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+  
+    body {
+        padding: 10px;
+    }
+  }
