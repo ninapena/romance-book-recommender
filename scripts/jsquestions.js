@@ -15,7 +15,7 @@ const books = [
     {
         "title": "A Court of Thorns and Roses",
         "author": "Sarah J. Maas",
-        "image": "https://m.media-amazon.com/images/I/81RrEEMiOCL.jpg",
+        "image": "images/acotar.jpg",
         "description": "When nineteen-year-old huntress Feyre kills a wolf in the woods, a terrifying creature arrives to demand retribution...",
         "genre": "Fantasy Romance",
         "trope": ["Enemies to Lovers", "Forced Proximity"],
@@ -27,7 +27,7 @@ const books = [
     {
         "title": "Powerless",
         "author": "Lauren Roberts",
-        "image": "https://m.media-amazon.com/images/I/91L7BkXI5oL.jpg",
+        "image": "images/powerless.jpg",
         "description": "Those with magical powers, called Elites, are highly revered, while those without, called Ordinaries, are marginalized and hunted. The story centers on Paedyn Gray, an Ordinary disguised as an Elite, who must navigate a dangerous competition and a budding romance with Prince Kai, all while concealing her true identity.",
         "genre": "Fantasy Romance",
         "trope": ["Enemies to Lovers", "Love Triangle"],
@@ -39,7 +39,7 @@ const books = [
     {
         "title": "Divine Rivals",
         "author": "Rebecca Ross",
-        "image": "https://mpd-biblio-covers.imgix.net/9781250323798.jpg",
+        "image": "images/divine-rivals.jpg",
         "description": "The story follows two rival journalists, Iris Winnow and Roman Kitt, who find an unexpected connection when Iris's letters to her brother on the front lines mysteriously end up in Roman's hands. As they engage in a clandestine correspondence, their lives become entwined with the war between the gods, forcing them to confront their own destinies and the fate of their world.",
         "genre": "Fantasy Romance",
         "trope": ["Enemies to lovers", "Workplace", "Slow Burn"],
@@ -506,7 +506,7 @@ function getUserPreferences() {
   }
   
   // function to find a matching book
-function findBookMatches() {
+/*function findBookMatches() {
     const preferences = getUserPreferences();
     const matchedBooks = [];
 
@@ -535,7 +535,44 @@ function findBookMatches() {
         localStorage.setItem("noMatch", "true");
     }
     window.location.href = 'recommendation.html'; // go to recommendation page
+} */
+
+function findBookMatches() {
+    const preferences = getUserPreferences();
+    const matchedBooks = [];
+
+    for (let i = 0; i < books.length; i++) {
+        const book = books[i];
+
+        // Only consider books with matching genre
+        if (preferences.questionThree === book.genre) {
+            let matchCount = 0;
+
+            if (preferences.questionOne === book.POV) matchCount++;
+            if (book.trope.includes(preferences.questionTwo)) matchCount++;
+            if (preferences.questionFour === book["spice-level"]) matchCount++;
+            if (preferences.questionFive === (book.series ? "Yes" : "No")) matchCount++;
+
+            // Attach matchCount so you can sort later if desired
+            book.matchScore = matchCount;
+
+            matchedBooks.push(book);
+        }
+    }
+
+    if (matchedBooks.length > 0) {
+        // sorts by best match first
+        matchedBooks.sort((a, b) => b.matchScore - a.matchScore);
+
+        localStorage.setItem("matchedBooks", JSON.stringify(matchedBooks));
+        localStorage.setItem("noMatch", "false");
+    } else {
+        localStorage.setItem("noMatch", "true");
+    }
+
+    window.location.href = 'recommendation.html';
 }
+
 
   // attach the function to form submission or button click
   document.getElementById("gonext").addEventListener("click", function (event) {
