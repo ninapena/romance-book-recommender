@@ -38,8 +38,8 @@ p {
 img {
     display: block;
     margin: auto;
-    width: 100%; 
-    max-width: 400px;
+    width: 100%;
+    max-width: 300px;
     height: auto;
   }
 
