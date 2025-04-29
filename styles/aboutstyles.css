@@ -15,6 +15,7 @@ html {
 
 body {
     background: #FAEEC8;
+    margin: 0;
 }
 h1 {
     font-family: "Pridi";
@@ -33,27 +34,30 @@ nav {
     background-color: #C8ADEA;
     z-index: 1000; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
+    width: 100%;
+    padding: 0;
+}
   
-  nav ul {
+nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 10px 20px;
+    padding: 20px 50px;
     display: flex;
     gap: 20px;
     justify-content: center;
-  }
+}
   
-  nav li a {
+nav li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
     font-family: "Outfit";
     transition: text-shadow 0.3s ease; 
+    font-size: 1.2rem;
 }
-
+  
 nav li a:hover {
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 button {

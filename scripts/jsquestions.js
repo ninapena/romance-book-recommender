@@ -3,7 +3,7 @@ const books = [
     {
         "title": "Icebreaker",
         "author": "Hannah Grace",
-        "image": "https://m.media-amazon.com/images/I/61LgNoStzqL.jpg",
+        "image": "images/icebreaker.jpg",
         "description": "Anastasia, a figure skater, and Nate, an ice hockey player, are forced to share a rink due to a prank, resulting in a romance between them despite the competitive nature.",
         "genre": "Sports Romance",
         "trope": ["Forced proximity", "Enemies to Lovers", "Grumpy/Sunshine"],

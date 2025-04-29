@@ -34,12 +34,12 @@ $(document).ready(function() {
         autoplay: false    
     });
 
-    // Auto-advance when a radio button is selected
+    // go to next slide when an option is selected
     $('.single-item').on('change', 'input[type="radio"]', function() {
         $('.single-item').slick('slickNext');
     });
 
-    // Show "Get my book match!" button only at the end
+    // button reveals at the end
     $('.single-item').on('afterChange', function(event, slick, currentSlide){
         if (currentSlide === slick.slideCount - 1) {
             $('#gonext').fadeIn();

@@ -16,6 +16,7 @@ html {
 
 body {
     background: #FAEEC8;
+    margin: 0;
 }
 h1 {
     font-family: "Pridi";
@@ -44,8 +45,9 @@ li > p {
 
 p {
     font-family: "Outfit";
-    font-size: 1.3em;
+    font-size: 1.4em;
     text-align: center;
+    font-weight: bold;
 }
 
 #gonext {
@@ -74,27 +76,30 @@ nav {
     background-color: #C8ADEA;
     z-index: 1000; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
+    width: 100%;
+    padding: 0;
+}
   
-  nav ul {
+nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 10px 20px;
+    padding: 20px 50px;
     display: flex;
     gap: 20px;
     justify-content: center;
-  }
+}
   
-  nav li a {
+nav li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
     font-family: "Outfit";
     transition: text-shadow 0.3s ease; 
+    font-size: 1.2rem;
 }
-
+  
 nav li a:hover {
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 input[type="radio"] {
@@ -137,7 +142,7 @@ label:hover {
     text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* slick styling bad 
+/* slick styling */ 
 .slick-slide {
     display: none;
 }
@@ -168,61 +173,9 @@ label:hover {
 }
 
 .slick-dots li.slick-active button {
-    background: black;
+    background: #C8ADEA;
 }
 
-.single-item {
-    width: 80%;
-    margin: 40px auto;
-    overflow: hidden;
-    position: relative;
-}
-
-.single-item > div {
-    padding: 20px;
-    background-color: #F5C9DB;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    min-height: 400px; 
-    box-sizing: border-box;
-    overflow: hidden;
-} */
-
-/*new slick styling */ 
-.slick-slide {
-    display: none;
-}
-.slick-slide.slick-current.slick-active {
-    display: block;
-}
-
-.slick-dots {
-    text-align: center;
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
-}
-
-.slick-dots li {
-    display: inline-block;
-    margin: 0 5px;
-}
-
-.slick-dots li button {
-    font-size: 0;
-    width: 12px;
-    height: 12px;
-    background: #ddd;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-}
-
-.slick-dots li.slick-active button {
-    background: black;
-}
-
-/* Fix the button */
 #gonext {
     display: none;
     margin: 20px auto 40px auto;
@@ -241,28 +194,39 @@ label:hover {
 .slick-slide {
     background-color: #F5C9DB;
     padding: 20px;
-    border: 2px solid #ccc;
+    /* border: 2px solid #ccc; */
     border-radius: 8px;
-    min-height: 400px;
+    /* min-height: 400px; */
     box-sizing: border-box;
     overflow: hidden;
 }
 
-.single-item > div, 
-.slick-slide {
-    padding: 20px;
+.single-item > div {
     background-color: #F5C9DB;
+    text-align: center;
+    font-family: "Outfit";
     border-radius: 8px;
-    min-height: 400px;
+    /* min-height: 400px; */
     box-sizing: border-box;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     align-items: center;
     justify-content: center;
 }
 
+.single-item {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.slick-track {
+    transition: height 0.3s ease;
+}
+
 /* arrows */
+ /* 
 .slick-prev, .slick-next {
     z-index: 1000;
     font-size: 30px;
@@ -280,7 +244,7 @@ label:hover {
     line-height: 1;
     opacity: .75;
     color: black;
-}
+} */
 
   @media (max-width: 768px) {
     nav ul {
