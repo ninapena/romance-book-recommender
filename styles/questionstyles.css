@@ -49,7 +49,7 @@ p {
 }
 
 #gonext {
-    display: block;
+    display: none;
     margin: auto;
     font-size: 2em;
     text-transform: uppercase;
@@ -60,7 +60,7 @@ p {
     font-family: "Outfit";
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 #gonext:hover {
@@ -97,7 +97,7 @@ nav li a:hover {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-  input[type="radio"] {
+input[type="radio"] {
     appearance: none;
     -moz-appearance: none;
     margin-right: 10px;
@@ -112,31 +112,177 @@ nav li a:hover {
     text-align: center;
     -ms-flex-item-align: center;
     align-self: center;
-  }
-  input[type="radio"]:hover, input[type="radio"]:checked {
+}
+input[type="radio"]:hover, input[type="radio"]:checked {
     background: black;
-    box-shadow: inset 0 0 0 .5em #fff, 0 0 0 .25em #F5C9DB;
-  }
-  input[type="radio"]:checked {
+    box-shadow: inset 0 0 0 .5em #fff, 0 0 0 .25em #B7E2ED;
+}
+input[type="radio"]:checked {
     background: black;
-    box-shadow: inset 0 0 0 .4em #fff, 0 0 0 .2em #F5C9DB;
-  }
+    box-shadow: inset 0 0 0 .4em #fff, 0 0 0 .2em #B7E2ED;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
   input[type="radio"]:focus {
     outline: 0;
-  }
+}
 
-  label {
+label {
     font-size: 1.3rem; 
     display: inline-block;
     margin-bottom: 8px;
     cursor:pointer;
-  } 
+} 
 
-  label:hover {
+label:hover {
     text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  @media (max-width: 30rem) {
+/* slick styling bad 
+.slick-slide {
+    display: none;
+}
+.slick-slide.slick-current.slick-active {
+    display: block;
+}
+
+.slick-dots {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.slick-dots li.slick-active button {
+    background: black;
+}
+
+.single-item {
+    width: 80%;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.single-item > div {
+    padding: 20px;
+    background-color: #F5C9DB;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    min-height: 400px; 
+    box-sizing: border-box;
+    overflow: hidden;
+} */
+
+/*new slick styling */ 
+.slick-slide {
+    display: none;
+}
+.slick-slide.slick-current.slick-active {
+    display: block;
+}
+
+.slick-dots {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.slick-dots li.slick-active button {
+    background: black;
+}
+
+/* Fix the button */
+#gonext {
+    display: none;
+    margin: 20px auto 40px auto;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #C8ADEA;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-family: "Outfit";
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slick-slide {
+    background-color: #F5C9DB;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    min-height: 400px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.single-item > div, 
+.slick-slide {
+    padding: 20px;
+    background-color: #F5C9DB;
+    border-radius: 8px;
+    min-height: 400px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* arrows */
+.slick-prev, .slick-next {
+    z-index: 1000;
+    font-size: 30px;
+    color: black;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 30px;
+    line-height: 1;
+    opacity: .75;
+    color: black;
+}
+
+  @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -147,11 +293,32 @@ nav li a:hover {
         font-size: 1.5em;
     }
 
-    p {
+    li > p {
         font-size: 1.3em;
+    }
+
+    p {
+        font-size: 1.2em;
     }
   
     body {
         padding: 10px;
     }
+
+    #gonext {
+        font-size: 1.2em;
+        padding: 8px 16px;
+    }
+
+    .single-item > div {
+        min-height: 300px; /* slightly smaller slides on mobile */
+        padding: 10px;
+    }
+    
+    input[type="radio"] {
+        transform: scale(1.2); /* smaller radio buttons on mobile */
+        margin-right: 8px;
+    }
+    
+
   }

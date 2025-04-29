@@ -3,6 +3,6 @@
 const startBtn = document.getElementById("starting");
 
 startBtn.addEventListener('click', () => {
-    window.location.href = 'questions.html';
+    window.location.href = 'slicktest.html';
 });
 

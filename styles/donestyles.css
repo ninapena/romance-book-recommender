@@ -66,12 +66,20 @@ body {
     justify-content: center;
 }
 
-img {
+/* img {
     display: block;
     margin: auto;
     width: 30%;
     height: 15%
-}
+} */
+
+img {
+    display: block;
+    margin: auto;
+    width: 100%; 
+    max-width: 400px;
+    height: auto;
+  }
 
 #restart {
     display: block;
@@ -84,14 +92,23 @@ img {
     font-family: "Outfit";
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
     
 #restart:hover {
     border: solid black 2px;
 }
 
-@media (max-width: 30rem) {
+#restart a {
+    color: black;
+    text-decoration: none;
+}
+
+#restart a:hover {
+    color: black;
+}
+
+@media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -109,4 +126,14 @@ img {
     body {
         padding: 10px;
     }
+
+    #restart {
+        font-size: 1.2em;
+        padding: 8px 16px;
+    }
+
+    img {
+        width: 90%;
+    }
+
   }

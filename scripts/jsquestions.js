@@ -494,7 +494,7 @@ const books = [
     }
 ]
   
-// Function to get user input from the form
+// get user input from the form
 function getUserPreferences() {
     const questionOne = document.querySelector('input[name="questionOne"]:checked')?.value;
     const questionTwo = document.querySelector('input[name="questionTwo"]:checked')?.value;
@@ -505,12 +505,12 @@ function getUserPreferences() {
     return { questionOne, questionTwo, questionThree, questionFour, questionFive };
   }
   
-  // Function to find a matching book
+  // function to find a matching book
 function findBookMatches() {
     const preferences = getUserPreferences();
     const matchedBooks = [];
 
-    // Loop through the books array to find all matches
+    // loop through the books array to find all matches
     for (let i = 0; i < books.length; i++) {
         const book = books[i];
         let matchCount = 0;
@@ -520,7 +520,7 @@ function findBookMatches() {
         if (preferences.questionFour === book["spice-level"]) matchCount++;
         if (preferences.questionFive === (book.series ? "Yes" : "No")) matchCount++;
         // make sure genre matches
-        if (matchCount >= 2) {
+        if (matchCount >= 3) {
             if (preferences.questionThree === book.genre) {
                 matchedBooks.push(book);
             }    
@@ -537,7 +537,7 @@ function findBookMatches() {
     window.location.href = 'recommendation.html'; // go to recommendation page
 }
 
-  // attach the function to your form submission or button click
+  // attach the function to form submission or button click
   document.getElementById("gonext").addEventListener("click", function (event) {
     event.preventDefault(); // prevent form submission to keep the user on the same page
     findBookMatches();

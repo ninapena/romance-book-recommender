@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Romance Book Recommender: Questions</title>
+    <link rel="stylesheet" href="styles/questionstyles.css">
+    <script src="scripts/jsquestions.js" defer></script>
+
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" /> -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script src="scripts/slick-init.js" defer></script>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="slicktest.html">QUESTIONS</a></li>
+            <li><a href="recommendation.html">RECOMMENDATION</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+        </ul>
+    </nav>
+
+    <h1>Answer a few questions about what book you want to read!</h1>
+    <form id="questionForm">
+        <div class="single-item">
+            <!-- Slide 1 -->
+            <div>
+                <p>What kind of genre do you want?</p>
+                <label><input type="radio" name="questionThree" value="Fantasy Romance"> Fantasy romance</label><br>
+                <label><input type="radio" name="questionThree" value="Cowboy Romance"> Cowboy romance</label><br>
+                <label><input type="radio" name="questionThree" value="Sports Romance"> Sports romance</label><br>
+                <label><input type="radio" name="questionThree" value="Small Town Romance"> Small town romance</label><br>
+                <label><input type="radio" name="questionThree" value="Romantic Comedy"> Romantic comedy</label><br>
+                <label><input type="radio" name="questionThree" value="Young Adult Romance"> Young adult romance</label><br>
+                <label><input type="radio" name="questionThree" value="Dark Romance"> Dark romance</label>
+            </div>
+    
+            <!-- Slide 2 -->
+            <div>
+                <p>What trope do you want?</p>
+                <label><input type="radio" name="questionTwo" value="Friends to Lovers"> Friends to lovers</label><br>
+                <label><input type="radio" name="questionTwo" value="Enemies to Lovers"> Enemies to lovers</label><br>
+                <label><input type="radio" name="questionTwo" value="Workplace"> Workplace</label><br>
+                <label><input type="radio" name="questionTwo" value="Forced Proximity"> Forced proximity</label><br>
+                <label><input type="radio" name="questionTwo" value="Fake Dating"> Fake dating</label><br>
+                <label><input type="radio" name="questionTwo" value="Slow Burn"> Slow burn</label><br>
+                <label><input type="radio" name="questionTwo" value="Love Triangle"> Love triangle</label><br>
+                <label><input type="radio" name="questionTwo" value="Grumpy/Sunshine"> Grumpy/sunshine</label><br>
+                <label><input type="radio" name="questionTwo" value="Second Chance Romance"> Second chance</label>
+            </div>
+    
+            <!-- Slide 3 -->
+            <div>
+                <p>Do you want it to be part of a series?</p>
+                <label><input type="radio" name="questionFive" value="Yes"> Yes</label><br>
+                <label><input type="radio" name="questionFive" value="No"> No</label>
+            </div>
+    
+            <!-- Slide 4 -->
+            <div>
+                <p>Would you like an open or closed door romance?*</p>
+                <p>*An open door romance refers to a romance novel with spice/explicit sex scenes.</p>
+                <label><input type="radio" name="questionFour" value="Open Door"> Open</label><br>
+                <label><input type="radio" name="questionFour" value="Closed Door"> Closed</label>
+            </div>
+    
+            <!-- Slide 5 -->
+            <div>
+                <p>What kind of main character do you want to read about?</p>
+                <label><input type="radio" name="questionOne" value="FMC"> Female</label><br>
+                <label><input type="radio" name="questionOne" value="MMC"> Male</label><br>
+                <label><input type="radio" name="questionOne" value="Dual"> Dual POV</label>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button type="submit" id="gonext">Get my book match!</button>
+        </div>
+    </form>
+
+</body>
+
+</html>
