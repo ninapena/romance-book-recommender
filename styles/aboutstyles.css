@@ -15,8 +15,13 @@ html {
 
 body {
     background: #FAEEC8;
+    /* background-image: url(images/heartbg.jpg); */
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
     margin: 0;
 }
+
 h1 {
     font-family: "Pridi";
     font-size: 2em;

@@ -34,6 +34,10 @@ h1 {
     line-height: 1.5;
 }
 
+.description > p:nth-of-type(2) {
+    font-weight: bold;
+}
+
 ol {
     font-family: "Outfit";
     font-size: 1em;
@@ -204,7 +208,7 @@ label:hover {
 .slick-slide {
     background-color: #F5C9DB;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 30px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -213,7 +217,7 @@ label:hover {
     background-color: #F5C9DB;
     text-align: center;
     font-family: "Outfit";
-    border-radius: 8px;
+    border-radius: 30px;
     box-sizing: border-box;
     overflow: hidden;
     align-items: center;

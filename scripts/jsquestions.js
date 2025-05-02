@@ -505,40 +505,19 @@ function getUserPreferences() {
     return { questionOne, questionTwo, questionThree, questionFour, questionFive };
   }
   
-  // function to find a matching book
-/*function findBookMatches() {
-    const preferences = getUserPreferences();
-    const matchedBooks = [];
-
-    // loop through the books array to find all matches
-    for (let i = 0; i < books.length; i++) {
-        const book = books[i];
-        let matchCount = 0;
-
-        if (preferences.questionOne === book.POV) matchCount++;
-        if (book.trope.includes(preferences.questionTwo)) matchCount++;
-        if (preferences.questionFour === book["spice-level"]) matchCount++;
-        if (preferences.questionFive === (book.series ? "Yes" : "No")) matchCount++;
-        // make sure genre matches
-        if (matchCount >= 3) {
-            if (preferences.questionThree === book.genre) {
-                matchedBooks.push(book);
-            }    
-        }
-    }
-    if (matchedBooks.length > 0) {
-        // store  matched books array in localStorage
-        localStorage.setItem("matchedBooks", JSON.stringify(matchedBooks));
-        localStorage.setItem("noMatch", "false");
-    } else {
-        // no match
-        localStorage.setItem("noMatch", "true");
-    }
-    window.location.href = 'recommendation.html'; // go to recommendation page
-} */
-
 function findBookMatches() {
     const preferences = getUserPreferences();
+    if (
+        !preferences.questionOne ||
+        !preferences.questionTwo ||
+        !preferences.questionThree ||
+        !preferences.questionFour ||
+        !preferences.questionFive
+    ) {
+        alert("Please answer all questions before getting your match.");
+        return; // makes sure all questions are answered
+    }
+
     const matchedBooks = [];
 
     for (let i = 0; i < books.length; i++) {
